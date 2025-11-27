@@ -1,0 +1,20 @@
+{
+  "name": "bibliotecanadalin",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mssql": "^12.1.1",
+    "tedious": "^19.1.3"
+  }
+}
