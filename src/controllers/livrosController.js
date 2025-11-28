@@ -38,7 +38,7 @@ const livrosController = {
         try {
             const { titulo, anoPublicacao, quantExemplares, nomeAutor } = req.body;
 
-            if (titulo == undefined || titulo.trim() == "" || anoPublicacao == undefined || anoPublicacao.trim() == "" || nomeAutor == undefined || nomeAutor.trim() == "" || quantExemplares == undefined || quantExemplares.trim() == "") {
+            if (titulo == undefined || titulo.trim() == "" || anoPublicacao == undefined || anoPublicacao == "" || isNaN(anoPublicacao) || nomeAutor == undefined || nomeAutor.trim() == "" || quantExemplares == undefined || quantExemplares == "" || isNaN(quantExemplares)) {
                 return res.status(400).json({ erro: "Campos obrigatórios não preenchidos" });
             }
 
