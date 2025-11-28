@@ -1,6 +1,16 @@
-const {sql, getConnection} = require("../config/db");
+const { sql, getConnection } = require("../config/db");
 
 const livrosModel = {
+
+    /**
+     * Busca todos os livros no banco de dados
+     * 
+     * @async
+     * @function buscarLivros
+     * @returns {Promise<Array>} Retorna uma lista com todos os livros.
+     * @throws mostra no console e propaga o erro caso a busca falhe.
+     * 
+     */
     buscarLivros: async () => {
         try {
             const pool = await getConnection();
@@ -16,6 +26,18 @@ const livrosModel = {
         }
     },
 
+
+    /**
+     * 
+     * Busca apenas um livro no banco de dados
+     * 
+     * @async
+     * @function buscarID
+     * @param {string} idProduto - Id do livro em UUID no banco de dados.
+     * @returns {Promise<Array>} - Retorna uma lista com um produto caso encontre no banco de dados.
+     * @throws Mostra no console e propaga o erro caso a busca falhe.
+     * 
+     */
     buscarID: async (idLivro) => {
         try {
             const pool = await getConnection();
@@ -36,6 +58,16 @@ const livrosModel = {
         }
     },
 
+    /**
+     * @async
+     * @function adicionarLivros
+     * @param {string} titulo 
+     * @param {Int} anoPublicacao 
+     * @param {Int} quantExemplares 
+     * @param {string} nomeAutor 
+     * @returns {Promise<void>} Não retorna nada, apenas executa a atualização.
+     * @throws Mostra no console e propaga o erro caso a atualização falhe.
+     */
     adicionarLivros: async (titulo, anoPublicacao, quantExemplares, nomeAutor) => {
         try {
             const pool = await getConnection();
@@ -46,36 +78,17 @@ const livrosModel = {
             `
 
             await pool.request()
-            .input("titulo", sql.VarChar(200), titulo)
-            .input("anoPublicacao", sql.Int, anoPublicacao)
-            .input("quantExemplares", sql.Int, quantExemplares)
-            .input("nomeAutor", sql.VarChar(200), nomeAutor)
-            .query(querySQL);
-            
+                .input("titulo", sql.VarChar(200), titulo)
+                .input("anoPublicacao", sql.Int, anoPublicacao)
+                .input("quantExemplares", sql.Int, quantExemplares)
+                .input("nomeAutor", sql.VarChar(200), nomeAutor)
+                .query(querySQL);
+
         } catch (error) {
             console.error("Erro ao adicionar livro: ", error);
-            throw error;           
-        }
-    },
-
-    removerLivro: async (idLivro) => {
-        try {
-            const pool = await getConnection();
-
-            const querySQL = `
-            DELETE FROM Livros
-            WHERE idLivro = @idLivro
-            `;
-
-            await pool.request()
-            .input("idLivro", sql.UniqueIdentifier, idLivro)
-            .query(querySQL)
-
-        } catch (error) {
-            console.error("Erro ao deletar o livro: ", error);
-            throw error;   
+            throw error;
         }
     }
-};
+}
 
-module.exports = {livrosModel};
+module.exports = { livrosModel };

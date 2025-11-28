@@ -12,6 +12,17 @@ const config = {
     }
 };
 
+
+/**
+ * Cria e retorna uma conexão com o banco de dados SQL Server
+ * 
+ * @async
+ * @function getConnection
+ * @returns {Promise<object>} Retorna o objeto de conexão com o banco de dados.
+ * @throws Mostra no console se ocorrer erro na conexão.
+ * 
+ */
+
 async function getConnection() {
     try {
         const pool = await sql.connect(config);

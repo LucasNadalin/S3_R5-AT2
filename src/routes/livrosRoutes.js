@@ -4,6 +4,5 @@ const {livrosController} = require("../controllers/livrosController");
 
 router.get("/livros", livrosController.mostrarLivros);
 router.post("/livros", livrosController.cadastrarLivros);
-router.delete("/livros/:idLivro", livrosController.deletarLivros);
 
 module.exports = { livrosRoutes: router };
