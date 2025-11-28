@@ -1,0 +1,344 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1762465071964
+  modified: 1762465071964
+  description: ""
+collection:
+  - name: Clientes
+    meta:
+      id: fld_e4d96601b1034f6e9f5f0a96d1ed5c12
+      created: 1762559994081
+      modified: 1764194119676
+      sortKey: -1762513481671.5
+      description: ""
+    children:
+      - url: " http://localhost:8082/clientes"
+        name: Listar Clientes
+        meta:
+          id: req_fa14d7f2322a466e9bf069d7856fb75c
+          created: 1762559999580
+          modified: 1763164088957
+          isPrivate: false
+          description: ""
+          sortKey: -1763164041265
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:8082/clientes"
+        name: Cadastrar Cliente
+        meta:
+          id: req_db625970a77d4d50a7e9eb750e107743
+          created: 1762560017536
+          modified: 1764286590558
+          isPrivate: false
+          description: ""
+          sortKey: -1763164041215
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nomeCliente": "Miguel",
+              "email": "miguel@gmail.com",
+            	"senha": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:8082/clientes/2FF276CF-FF95-42C3-B999-4A1AC802E4B9"
+        name: Deletar Cliente
+        meta:
+          id: req_f450ae13806747d69efef47f6388cbfe
+          created: 1763164038280
+          modified: 1764289557233
+          isPrivate: false
+          description: ""
+          sortKey: -1763164038280
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:8082/clientes/9F18DDDB-8BC3-43A9-A5A1-1210F736D01E"
+        name: Atualizar Cliente
+        meta:
+          id: req_f228a105e3cd46a1a5c8216e1eda2e64
+          created: 1763164041165
+          modified: 1764194456849
+          isPrivate: false
+          description: ""
+          sortKey: -1763164041165
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nomeCliente": "José",
+            	"cpfCliente": "12345678912"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Livros
+    meta:
+      id: fld_a8ffac9e616044899ca0dd7214fcad52
+      created: 1764194246704
+      modified: 1764194278255
+      sortKey: -1764194246704
+      description: ""
+    children:
+      - url: " http://localhost:8082/livros/3400070B-057A-4899-B251-34A33F384A38"
+        name: Deletar Livro
+        meta:
+          id: req_fd3fcab9265f4282acff5816ed558439
+          created: 1764194285646
+          modified: 1764290028474
+          isPrivate: false
+          description: ""
+          sortKey: -1764194285646
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: ""
+        name: Atualizar Livro
+        meta:
+          id: req_f1b6e045128a4f55a4c305c97712a02a
+          created: 1764194288294
+          modified: 1764194445828
+          isPrivate: false
+          description: ""
+          sortKey: -1764194288294
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:8082/livros"
+        name: Cadastrar Livro
+        meta:
+          id: req_8a91b887db1d4353b8b43c39a44e4f40
+          created: 1764194289869
+          modified: 1764288066938
+          isPrivate: false
+          description: ""
+          sortKey: -1764194289869
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"titulo": "A chapeuzinho Verde",
+            	"anoPublicacao": "2001",
+            	"quantExemplares": "1",
+            	"nomeAutor": "Francisco da Silva"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:8082/livros"
+        name: Listar Livros
+        meta:
+          id: req_f78ca035cc144d8ba00eee57032e64b4
+          created: 1764194291296
+          modified: 1764283294911
+          isPrivate: false
+          description: ""
+          sortKey: -1764194291296
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Emprestimos
+    meta:
+      id: fld_29cf89fb83bd4408b7349d144b3d5de1
+      created: 1764194260168
+      modified: 1764194264187
+      sortKey: -1764194260168
+      description: ""
+    children:
+      - url: ""
+        name: Deletar Emprestimo
+        meta:
+          id: req_cbf30af510554bff810cacddc52bd646
+          created: 1764194297095
+          modified: 1764194472978
+          isPrivate: false
+          description: ""
+          sortKey: -1764194297095
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: ""
+        name: Atualizar Emprestimo
+        meta:
+          id: req_3c02d41ba9994c4cba947982ea09a7c5
+          created: 1764194298821
+          modified: 1764194470483
+          isPrivate: false
+          description: ""
+          sortKey: -1764194298821
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: ""
+        name: Cadastrar Emprestimo
+        meta:
+          id: req_cdeec5692ad94bdda685c1620eb743ca
+          created: 1764194300198
+          modified: 1764194467326
+          isPrivate: false
+          description: ""
+          sortKey: -1764194300198
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: " http://localhost:8082/emprestimos"
+        name: Listar Emprestimos
+        meta:
+          id: req_bc4c1805db7c42299b85ea95d341e99e
+          created: 1764194302147
+          modified: 1764282958699
+          isPrivate: false
+          description: ""
+          sortKey: -1764194302147
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1762465119090
+    modified: 1762465119090
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1762465119085
+    modified: 1762465119085
+    isPrivate: false
