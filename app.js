@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { clientesRoutes } = require("./src/routes/clientesRoutes");
-const { emprestimosRoutes } = require("./src/routes/emprestimosRoute");
+const { emprestimosRoutes } = require("./src/routes/emprestimosRoutes");
 const { livrosRoutes } = require("./src/routes/livrosRoutes");
 const PORT = 8082;
 
